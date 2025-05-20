@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myntra Bag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <button class="bag-button" onclick="bagCard++; document.getElementById('bag-card').innerText = `Your Bag has ${bagCard} items`">Add to Bag</button>
+
+    <button class="wish-button" onclick="bagCard--; document.getElementById('bag-card').innerText = `Your Bag has ${bagCard} items`">Move to WISHLIST</button>
+
+    <button class="bag-button" onclick="bagCard++; document.getElementById('bag-card').innerText = `Your Bag has ${bagCard} items`">Add 1 + 1 to Bag</button>
+
+    <h1 id="bag-card"></h1>
+  </main>
+
+  <script>
+    let bagCard = 0;
+
+    document.getElementById('bag-card').innerText = `Your Bag has ${bagCard} items`
+  </script>
+</body>
+</html>
