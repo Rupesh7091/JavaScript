@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method Practice</title>
+</head>
+<body>
+  <script>
+    function checkOddEvenNum(num){
+      if(num % 2 === 0){
+        return 'This is a Even Number';
+      }else{
+        return 'This is a Odd Number';
+      }
+    };
+
+    function findLargeNum(num1, num2){
+      if(num1 > num2){
+        return num1;
+      }else{
+        return num2;
+      }
+    };
+
+    function convertSelsiusToFahrenheit(selsius){
+      let fahrenheit = (9/5) * selsius + 32;
+      return fahrenheit;
+    }
+
+    console.log(convertSelsiusToFahrenheit(40));
+  </script>
+</body>
+</html>
