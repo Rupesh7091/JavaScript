@@ -44,16 +44,83 @@
     // console.log(p == q);
 
 
+    // let product = {
+    //   company : 'Mango',
+    //   price: 861,
+    //   item_name: 't-shirt',
+    // }
+
+    // let {company, item_name} = product;
+    // console.log(company);
+    // console.log(item_name);
+
+
+    /*let product = {
+      name: 'jeans',
+      size: 's',
+      fit: 'skin fit',
+      'delivery-time': 'same date',
+    };
+
+    console.log(product);
+
+    let copyproduct = product;
+    copyproduct.size = 'M';
+
+    console.log(product);
+
+    console.log(product['delivery-time']);*/
+
+    // let obj = {
+    //   message: 'good job',
+    //   status: 'complete',
+    // };
+
+    // let {message, status} = obj;
+
+    // console.log(message);
+    // console.log(status);
+
 
     let product = {
-      company : 'Mango',
-      price: 861,
-      item_name: 't-shirt',
+      name: 'jeans',
+      size: 's',
+      fit: 'skin fit',
+    };
+
+    function isIdenticalProduct(product1, product2) {
+      if(typeof product1 !== 'object' || typeof product2 !== 'object'){
+        console.warn('Given parameter is not a Object');
+        return false;
+      }
+
+      if(product1 == product2){
+        return true;
+      }
+
+      if(product1.name == product2.name && product1.size == product2.size && product1.fit == product2.fit){
+        return true;
+      }else{
+        return false;
+      }
     }
 
-    let {company, item_name} = product;
-    console.log(company);
-    console.log(item_name);
+    let product2 = {
+      name: 'jeans',
+      size: 's',
+      fit: 'skin fit',
+    };
+
+    let product3 = {
+      name: 'jeans',
+      size: 'M',
+      fit: 'skin fit',
+    };
+
+    console.log(isIdenticalProduct(product, ''));
+    console.log(isIdenticalProduct(product, product));
+    console.log(isIdenticalProduct(product, product2));
+    console.log(isIdenticalProduct(product2, product3));
   </script>
 </body>
 </html>
