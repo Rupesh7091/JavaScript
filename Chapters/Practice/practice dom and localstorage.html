@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice DOM and LocalStorage</title>
+
+  <style>
+    #count-num-btn {
+      width: 70px;
+      height: 70px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body style="text-align: center;">
+
+  <h2 class="show-greeting"></h2>
+
+  <button id="count-num-btn" onclick="countButton();"></button>
+
+  <script>
+    function greeting(person = 'Dear') {
+      let greetingMsg = document.querySelector('.show-greeting');
+      let date = new Date();
+
+      if(date.getHours() > 5 && date.getHours() <= 12){
+        greetingMsg.innerText = `Good Morning ${person}`;
+      }else if(date.getHours() > 12 && date.getHours() <= 18){
+        greetingMsg.innerText = `Good Afternoon ${person}`;
+      }else{
+        greetingMsg.innerText = `Good Night ${person}`;
+      }
+    };
+    greeting('Rupesh');
+
+    let count = localStorage.getItem('count') || 0;
+
+    function countButton() {
+      count++;
+      localStorage.setItem('count', count);
+      updateButton();
+    };
+
+    function updateButton() {
+      let countBtn = document.querySelector('#count-num-btn');
+      if(count % 2 === 0){
+        countBtn.style.backgroundColor = 'Green';
+      }else {
+        countBtn.style.backgroundColor = 'red';
+      }
+      
+      countBtn.innerText = count;
+    };
+
+    updateButton();
+  </script>
+</body>
+</html>
