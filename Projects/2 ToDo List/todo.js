@@ -33,7 +33,6 @@ function displayItems() {
       
     `;
   }
-  localStorage.removeItem
 
   containerElement.innerHTML = newHtml;
 };
