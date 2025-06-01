@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .increase-size {
+      font-size: 20px;
+      width: 6rem;
+      height: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- <button id="grow-button" onclick="setTimeout(growButton, 2000);">Click me</button> -->
+
+  <button id="grow-button">Click me</button>
+  <script>
+    // let multiply = function(num1, num2) {
+    //   return num1 * num2;
+    // }
+
+    // // console.log(multiply(4, 8));
+    // // console.log(multiply(4, 5));
+
+
+    // function runTwice(product) {
+    //   console.log(product);
+    //   console.log(product);
+    // }
+
+    // console.log(runTwice(multiply(5, 7)));
+    // console.log(runTwice(multiply(9, 8)));
+
+
+    // function growButton() {
+    //   let button = document.querySelector('#grow-button');
+    //   button.classList.add('increase-size');
+    // }
+
+
+    let button = document.querySelector('#grow-button');
+
+    button.addEventListener('click', () => {
+      setTimeout(() => button.classList.add('increase-size'), 2000);
+    });
+
+
+    let arr = [1,2,3,4,5,6,7,8,9,5,8,9];
+    let arr2 = [1,2,3,4,5,6,7,8,9,5,8,9,4,9];
+
+    // function sumNum(nums) {
+    //   let sum = 0;
+    //   nums.forEach(num => {
+    //     sum = sum + num;
+    //   });
+
+    //   console.log(sum);
+    // }
+
+    // sumNum(arr);
+    // sumNum(arr2);
+
+
+    function getsquare(nums) {
+      return nums.map(num => num * num);
+    }
+
+   console.log( getsquare(arr));
+  </script>
+</body>
+</html>
