@@ -1,15 +1,16 @@
-let inputTodo = document.querySelector('#input-todo');
+let todoList;
 
-let containerElement = document.querySelector('.todo-container');
+onLoad();
 
-let dateElement = document.querySelector('#todo-date');
-
-let todoTask = localStorage.getItem('TodoList');
-let todoList = todoTask ? JSON.parse(todoTask) : [];
-
-displayItems();
+function onLoad() {
+  let todoTask = localStorage.getItem('TodoList');
+  todoList = todoTask ? JSON.parse(todoTask) : [];
+  displayItems();
+}
 
 function addTodo() {
+  let inputTodo = document.querySelector('#input-todo');
+  let dateElement = document.querySelector('#todo-date');
   let todoItem = inputTodo.value;
   let todoDate = dateElement.value;
   todoList.push({item: todoItem, dueDate: todoDate});
@@ -21,6 +22,7 @@ function addTodo() {
 };
 
 function displayItems() {
+  let containerElement = document.querySelector('.todo-container');
   let newHtml = '';
 
   for(let i = 0; i < todoList.length; i++) {
